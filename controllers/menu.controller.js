@@ -58,7 +58,7 @@ function createNew(req, res, next) {
     let params = [id, name, category, subcategory, price, cost];
     try {
       model.createNew(params);
-     res.redirect('/menu/all');
+      res.redirect('/menu/all');
     } catch (err) {
       console.error("Error while creating menu ", err.message);
       next(err);
@@ -87,6 +87,7 @@ function update(req, res, next) {
 
 
 function searchByName(req, res, next) {
+  console.log('testing something')
   let term = req.query.term;
   let meals = [];
   if (term) {
